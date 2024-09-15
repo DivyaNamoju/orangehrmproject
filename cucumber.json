@@ -1,0 +1,16 @@
+{
+  "default": {
+    "publish" : false,
+    "dryRun" : false,
+    "format": ["progress-bar",
+    "html:cucumber-reports/cucumber-report.html",
+    "json:cucumber-reports/cucumber-report.json"
+    ],
+    "formatOptions" : {
+      "snippetInterface" : "async-await"
+    },
+    "paths" : ["src/test/features/Login.feature"],
+    "requireModule": ["ts-node/register"],
+    "require": ["src/test/stepDefinitions/*.ts", "src/test/hooks/hooks.ts"]
+  }
+}
