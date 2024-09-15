@@ -4,7 +4,7 @@ import {expect} from '@playwright/test';
 setDefaultTimeout(60 * 1000 ) // Modifying default timeout 5000 milliseconds globally
 
 Given('user is on application', {timeout: 60 * 1000}, async function () {
-    await pageFixture.page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+    await pageFixture.page.goto(process.env.BASEURL!);
 
 });
 When('user enters username {string}', async function (string) {

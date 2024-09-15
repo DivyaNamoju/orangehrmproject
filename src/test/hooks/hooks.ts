@@ -1,6 +1,8 @@
 import { AfterAll, BeforeAll , Before, After, Status} from "@cucumber/cucumber";
 import {webkit, Browser, Page, expect, BrowserContext} from '@playwright/test';
 import { pageFixture } from "./pageFixture";
+import { invokeBrowser } from "../../helper/browsers/browserManager";
+import { getEnv } from "../../helper/env/env";
 
 // Reference : https://github.com/cucumber/cucumber-js/blob/main/docs/support_files/hooks.md
 // Reference : https://github.com/cucumber/cucumber-js/blob/main/docs/support_files/api_reference.md
@@ -10,7 +12,8 @@ let page:Page;
 let browserContext : BrowserContext
 
 BeforeAll(async function(){
-    browser = await webkit.launch({headless:false});
+    getEnv();
+    browser = await invokeBrowser();
 })
 Before({name:"Setup browser context and page"}, async function(){
     browserContext = await browser.newContext();
