@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js test",
-    "report": "npx ts-node src/helper/report.ts"
+    "report": "npx ts-node src/helper/report.ts",
+    "test-failed": "cucumber-js --profile rerun @rerun.txt"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
     "@cucumber/cucumber": "^11.0.1",
     "@playwright/test": "^1.47.1",
     "@types/node": "^22.5.5",
+    "fs-extra": "^11.2.0",
     "multiple-cucumber-html-reporter": "^3.7.0",
     "ts-node": "^10.9.2"
   }
