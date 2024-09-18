@@ -21,8 +21,8 @@
     "publish" : false,
     "dryRun" : false,
     "format": ["progress-bar",
-    "html:cucumber-reports/cucumber-report.html",
-    "json:cucumber-reports/cucumber-report.json",
+    "html:test-results/cucumber-report.html",
+    "json:test-results/cucumber-report.json",
     "rerun:@rerun.txt"
     ],
     "formatOptions" : {
