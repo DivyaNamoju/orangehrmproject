@@ -1,9 +1,10 @@
 import {Given, Then, When, setDefaultTimeout} from "@cucumber/cucumber";
 import { pageFixture } from "../hooks/pageFixture";
 import {expect} from '@playwright/test';
+import LoginPage from "../pages/LoginPage";
 setDefaultTimeout(60 * 1000 ) // Modifying default timeout 5000 milliseconds globally
 
-Given('user is on application', {timeout: 60 * 1000}, async function () {
+Given('user is on application', async function () {
     await pageFixture.page.goto(process.env.BASEURL!);
     pageFixture.log.info("navigated to URL");
 });
