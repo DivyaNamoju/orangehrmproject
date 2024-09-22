@@ -19,5 +19,9 @@ let loginPage:LoginPage;
     await loginPage.isUserOndashboard();
   });
   Then('user should view the warning message', async function () {
+    
     await loginPage.isInvalidCredentialDisplayed();
+  });
+  Then('user should view the orange HRM logo image', async function () {
+    await loginPage.isHRMlogo();
   });

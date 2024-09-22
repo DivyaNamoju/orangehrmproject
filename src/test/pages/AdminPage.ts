@@ -20,7 +20,11 @@ export default class AdminPage{
     }
     async isRecordsPresentMessage()
     {
-        return await this.page.locator("div[class='orangehrm-horizontal-padding orangehrm-vertical-padding'] span[class='oxd-text oxd-text--span']")
+        await this.page.locator("div[class='orangehrm-horizontal-padding orangehrm-vertical-padding'] span[class='oxd-text oxd-text--span']")
         .isVisible();
+    }
+    async isRecordsDisplayed()
+    {
+        await this.page.locator("//div[@class='oxd-table-card']").isVisible();
     }
 }
